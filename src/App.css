@@ -1,0 +1,223 @@
+/* ═══════════════════════════════════════════
+   Hero Section — Layout & Styling
+   Matches 1.png reference exactly
+   ═══════════════════════════════════════════ */
+
+/* ── Hero Container ── */
+.hero-section {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+  background: #0a0a0a;
+  overflow: hidden;
+}
+
+/* ── Navbar ── */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 2.5rem;
+  z-index: 100;
+  background: transparent;
+  font-family: 'NavbarFont', sans-serif;
+}
+
+.navbar__logo {
+  font-family: 'NavbarFont', sans-serif;
+  font-size: 1.35rem;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  font-weight: 400;
+}
+
+.navbar__links {
+  display: flex;
+  list-style: none;
+  gap: 2.5rem;
+}
+
+.navbar__links li a {
+  font-family: 'NavbarFont', sans-serif;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.05rem;
+  letter-spacing: 0.5px;
+  transition: opacity 0.3s ease;
+  font-weight: 400;
+}
+
+.navbar__links li a:hover {
+  opacity: 0.7;
+}
+
+.navbar__icons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navbar__icons a {
+  display: flex;
+  align-items: center;
+  transition: opacity 0.3s ease;
+}
+
+.navbar__icons a:hover {
+  opacity: 0.7;
+}
+
+.navbar__icons img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  filter: invert(1);
+}
+
+/* ── PixelBlast Background Layer ── */
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+/* ── Hero Photo ── */
+.hero-photo {
+  position: absolute;
+  z-index: 2;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-35%);
+  width: 550px;
+  height: auto;
+  pointer-events: auto;
+}
+
+.hero-photo img {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  display: block;
+  pointer-events: none;
+}
+
+.hero-photo__bw {
+  z-index: 2;
+  transition: opacity 0.5s ease;
+}
+
+.hero-photo__color {
+  z-index: 1;
+}
+
+.hero-photo:hover .hero-photo__bw {
+  opacity: 0;
+}
+
+/* ── Hero Text Content ── */
+.hero-content {
+  position: absolute;
+  z-index: 3;
+  top: 12%;
+  left: 3.5%;
+  pointer-events: none;
+}
+
+.hero-content > * {
+  pointer-events: auto;
+}
+
+.hero-hi {
+  font-family: 'HiFont', cursive;
+  font-size: 3rem;
+  color: #ffffff;
+  margin-bottom: 0.25rem;
+  line-height: 1.2;
+  font-weight: 400;
+}
+
+.hero-name {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.hero-name__line {
+  font-family: 'HeroFont', sans-serif;
+  font-size: clamp(5rem, 10vw, 10rem);
+  color: #ffffff;
+  font-weight: 900;
+  line-height: 0.95;
+  text-transform: uppercase;
+  letter-spacing: -2px;
+  visibility: visible !important;
+}
+
+/* ── Software Engineer Role ── */
+.hero-role {
+  position: absolute;
+  z-index: 3;
+  bottom: 12%;
+  right: 5%;
+  pointer-events: none;
+}
+
+.hero-role__text {
+  font-family: 'TextTypeFont', monospace;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  color: #a383ff;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.hero-role__text .text-type__content {
+  color: #a383ff !important;
+}
+
+.hero-role__text .text-type__cursor {
+  color: #a383ff;
+  font-weight: 400;
+}
+
+/* ── Scroll Down ── */
+.hero-scroll {
+  position: absolute;
+  z-index: 3;
+  left: 2rem;
+  bottom: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.hero-scroll__line {
+  width: 1.5px;
+  height: 50px;
+  background: #ffffff;
+  opacity: 0.4;
+}
+
+.hero-scroll__line--bottom {
+  height: 40px;
+}
+
+.hero-scroll__text {
+  font-family: 'ScrolldownFont', sans-serif;
+  font-size: 0.7rem;
+  color: #ffffff;
+  letter-spacing: 2px;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  opacity: 0.6;
+}

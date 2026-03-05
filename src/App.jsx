@@ -4,6 +4,7 @@ import Shuffle from './components/Shuffle';
 import TextType from './components/TextType';
 import Marquee from './components/Marquee';
 import AboutSection from './components/AboutSection';
+import SkillsSection from './components/SkillsSection';
 import './App.css';
 
 function App() {
@@ -160,6 +161,9 @@ function App() {
 
       {/* ── About Section ── */}
       <AboutSection />
+
+      {/* ── Skills Section ── */}
+      <SkillsSection />
     </div>
   );
 }

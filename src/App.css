@@ -1,7 +1,13 @@
 /* ═══════════════════════════════════════════
-   Hero Section — Layout & Styling
-   Matches 1.png reference exactly
+   Page & Hero Section — Layout & Styling
    ═══════════════════════════════════════════ */
+
+/* ── Page Wrapper ── */
+.page-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  background: #0a0a0a;
+}
 
 /* ── Hero Container ── */
 .hero-section {
@@ -11,6 +17,8 @@
   min-height: 100vh;
   background: #0a0a0a;
   overflow: hidden;
+  will-change: transform, filter, opacity;
+  transition: transform 0.05s linear, filter 0.05s linear, opacity 0.05s linear;
 }
 
 /* ── Navbar ── */
@@ -26,6 +34,44 @@
   z-index: 100;
   background: transparent;
   font-family: 'NavbarFont', sans-serif;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── Dynamic Island Navbar ── */
+.navbar--island {
+  top: 0.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  min-width: min(90vw, 800px);
+  max-width: 900px;
+  padding: 0.75rem 2rem;
+  border-radius: 50px;
+  background: rgba(20, 16, 36, 0.65);
+  backdrop-filter: blur(24px) saturate(1.5);
+  -webkit-backdrop-filter: blur(24px) saturate(1.5);
+  border: 1px solid rgba(163, 131, 255, 0.15);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.05) inset,
+    0 1px 0 rgba(255, 255, 255, 0.1) inset;
+}
+
+.navbar--island .navbar__logo {
+  font-size: 1.2rem;
+}
+
+.navbar--island .navbar__links li a {
+  font-size: 1rem;
+}
+
+.navbar--island .navbar__links {
+  gap: 1.5rem;
+}
+
+.navbar--island .navbar__icons img {
+  width: 20px;
+  height: 20px;
 }
 
 .navbar__logo {
@@ -34,12 +80,14 @@
   color: #ffffff;
   letter-spacing: 0.5px;
   font-weight: 400;
+  transition: font-size 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .navbar__links {
   display: flex;
   list-style: none;
   gap: 2.5rem;
+  transition: gap 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .navbar__links li a {
@@ -48,7 +96,7 @@
   text-decoration: none;
   font-size: 1.25rem;
   letter-spacing: 0.5px;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease, color 0.3s ease, font-size 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   font-weight: 400;
 }
 
@@ -77,6 +125,7 @@
   width: 24px;
   height: 24px;
   object-fit: contain;
+  transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1), height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* ── PixelBlast Background Layer ── */

@@ -1,0 +1,176 @@
+/* ═══════════════════════════════════════════
+   About Section — Layout & Styling
+   ═══════════════════════════════════════════ */
+
+.about-section {
+  position: relative;
+  width: 100%;
+  background: #0a0a0a;
+  padding: 4rem 0 6rem;
+  z-index: 5;
+}
+
+/* ── Purple Bar Divider ── */
+.about-bar {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0 3rem;
+  margin-bottom: 10rem;
+}
+
+.about-bar--end {
+  margin-bottom: 0;
+  margin-top: 10rem;
+  justify-content: flex-end;
+}
+
+.about-bar__label {
+  font-family: 'TextTypeFont', monospace;
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+  color: #ffffff;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.about-bar__white {
+  color: #ffffff;
+}
+
+.about-bar__purple {
+  color: #a383ff;
+}
+
+.about-bar__line {
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(90deg, #7c3aed 0%, #a383ff 50%, #7c3aed 100%);
+  border-radius: 1px;
+}
+
+/* ── About Content Grid ── */
+.about-content {
+  display: grid;
+  grid-template-columns: minmax(400px, 1fr) auto minmax(300px, 1fr);
+  gap: 3rem;
+  padding: 0 5rem;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.about-content__divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  padding: 2rem 0;
+  max-width: 20px;
+}
+
+.about-content__divider img {
+  height: 100%;
+  width: auto;
+  max-width: 20px;
+  object-fit: contain;
+}
+
+.about-content__cloud {
+  position: relative;
+  width: 100%;
+  min-width: 400px;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+}
+
+.icon-cloud {
+  width: 100%;
+  min-width: 400px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+}
+
+.icon-cloud__loading {
+  width: 200px;
+  height: 200px;
+  border: 2px solid rgba(163, 131, 255, 0.2);
+  border-top-color: #a383ff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── About Title ── */
+.about-title {
+  font-family: 'TextTypeFont', monospace;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  color: #ffffff;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 2rem;
+}
+
+.about-title__main {
+  color: #ffffff;
+}
+
+.about-title__rotating {
+  display: inline-flex;
+  align-items: baseline;
+  vertical-align: baseline;
+  overflow: hidden;
+  height: 1.3em;
+}
+
+.about-title__rotating .rotating-box {
+  font-family: 'TextTypeFont', monospace;
+  font-size: inherit;
+  font-weight: 700;
+  color: #ffffff;
+  background: #7c3aed;
+  padding: 0.05em 0.35em;
+  border-radius: 0.25em;
+}
+
+.about-title__rotating .text-rotate {
+  display: inline-flex;
+}
+
+/* ── About Body Text ── */
+.about-body {
+  font-family: 'RegTextFont', sans-serif;
+  font-size: clamp(1rem, 1.4vw, 1.2rem);
+  color: #c0c0c0;
+  line-height: 1.8;
+  max-width: 600px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .about-content {
+    grid-template-columns: 1fr;
+    padding: 0 2rem;
+    gap: 2rem;
+  }
+
+  .about-content__divider {
+    display: none;
+  }
+
+  .about-content__cloud {
+    min-height: 300px;
+  }
+
+  .about-bar {
+    padding: 0 1.5rem;
+  }
+}

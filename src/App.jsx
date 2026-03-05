@@ -103,7 +103,7 @@ function App() {
       {/* ── Software Engineer TextType ── */}
       <div className="hero-role">
         <TextType
-          text={["Software Engineer"]}
+          text={["Software Engineer", "Designer", "Developer", "Problem Solver", "AI Enthusiast"]}
           typingSpeed={75}
           pauseDuration={2000}
           showCursor={true}

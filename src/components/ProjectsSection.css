@@ -1,0 +1,56 @@
+/* ═══════════════════════════════════════════
+   Projects Section — GSAP Horizontal Scroll
+   ═══════════════════════════════════════════ */
+
+.projects-section {
+  position: relative;
+  width: 100vw;
+  background: #0a0a0a;
+  overflow: hidden; /* Hide horizontal overflow */
+}
+
+/* ── Fixed Header while Pinning ── */
+.projects-header-fixed {
+  position: absolute;
+  top: 4rem;
+  left: 5rem;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.projects-title {
+  font-family: 'TextTypeFont', monospace;
+  font-size: clamp(3rem, 6vw, 6rem);
+  font-weight: 900;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -2px;
+  /* Slight purple drop shadow to match "My Work" reference */
+  text-shadow: 0px 0px 40px rgba(163, 131, 255, 0.4);
+}
+
+/* ── Horizontal Track Container ── */
+.projects-track-container {
+  height: 100vh; /* Takes full viewport height */
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: visible; /* track overflows to the right */
+}
+
+.projects-track {
+  display: flex;
+  height: auto;
+  min-width: max-content; /* Critical: allows track to stretch to fit all cards horizontal */
+  padding-left: 15vw; /* Initial offset so the first card isn't immediately flush left */
+  will-change: transform;
+}
+
+/* ── Responsive styling ── */
+@media (max-width: 1024px) {
+  .projects-header-fixed {
+    top: 6rem;
+    left: 2rem;
+  }
+}

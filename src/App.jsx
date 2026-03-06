@@ -4,7 +4,11 @@ import Shuffle from './components/Shuffle';
 import TextType from './components/TextType';
 import Marquee from './components/Marquee';
 import AboutSection from './components/AboutSection';
+import IconCloud from './components/IconCloud';
 import SkillsSection from './components/SkillsSection';
+import ProjectsSection from './components/ProjectsSection';
+import GallerySection from './components/GallerySection';
+import { ErrorBoundary } from './components/ErrorBoundary';
 import './App.css';
 
 function App() {
@@ -187,8 +191,16 @@ function App() {
       {/* ── About Section ── */}
       <AboutSection />
 
-      {/* ── Skills Section ── */}
+      {/* ── Skills Section (Technologies) ── */}
       <SkillsSection />
+
+      {/* ── Projects Horizontal Scroll Section ── */}
+      <ProjectsSection />
+
+      {/* ── Dome Gallery Section ── */}
+      <ErrorBoundary>
+        <GallerySection />
+      </ErrorBoundary>
     </div>
   );
 }

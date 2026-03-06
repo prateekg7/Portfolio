@@ -94,7 +94,8 @@ function MenuItem({ link, text, image, subItems, speed, textColor, marqueeBgColo
         x: -contentWidth,
         duration: speed,
         ease: 'none',
-        repeat: -1
+        repeat: -1,
+        paused: true
       });
     };
 
@@ -121,6 +122,8 @@ function MenuItem({ link, text, image, subItems, speed, textColor, marqueeBgColo
       .set(marqueeRef.current, { y: edge === 'top' ? '-101%' : '101%' }, 0)
       .set(marqueeInnerRef.current, { y: edge === 'top' ? '101%' : '-101%' }, 0)
       .to([marqueeRef.current, marqueeInnerRef.current], { y: '0%' }, 0);
+
+    animationRef.current?.play();
   };
 
   const handleMouseLeave = ev => {
@@ -134,6 +137,8 @@ function MenuItem({ link, text, image, subItems, speed, textColor, marqueeBgColo
       .timeline({ defaults: animationDefaults })
       .to(marqueeRef.current, { y: edge === 'top' ? '-101%' : '101%' }, 0)
       .to(marqueeInnerRef.current, { y: edge === 'top' ? '101%' : '-101%' }, 0);
+      
+    animationRef.current?.pause();
   };
 
   return (
@@ -157,6 +162,7 @@ function MenuItem({ link, text, image, subItems, speed, textColor, marqueeBgColo
                     <div key={i} className="marquee__subitem">
                       {sub.icon && <div className="marquee__sub-icon">{sub.icon}</div>}
                       <span>{sub.text}</span>
+                      <span style={{ margin: '0 1.5rem', opacity: 0.3, fontWeight: '300' }}>|</span>
                     </div>
                   ))
                 ) : (

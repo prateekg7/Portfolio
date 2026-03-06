@@ -19,47 +19,47 @@ const skillsData = [
     link: '#',
     text: 'Programming Languages',
     subItems: [
-      { text: 'Python', icon: <SiPython /> },
-      { text: 'C', icon: <SiC /> },
-      { text: 'C++', icon: <SiCplusplus /> },
+      { text: 'Python', icon: <SiPython color="#3776AB" /> },
+      { text: 'C', icon: <SiC color="#A8B9CC" /> },
+      { text: 'C++', icon: <SiCplusplus color="#00599C" /> },
     ]
   },
   {
     link: '#',
     text: 'Machine Learning',
     subItems: [
-      { text: 'PyTorch', icon: <SiPytorch /> },
-      { text: 'Scikit-learn', icon: <SiScikitlearn /> },
-      { text: 'TensorFlow', icon: <SiTensorflow /> },
-      { text: 'Keras', icon: <SiKeras /> },
-      { text: 'NumPy', icon: <SiNumpy /> },
-      { text: 'Pandas', icon: <SiPandas /> },
-      { text: 'OpenCV', icon: <SiOpencv /> },
-      { text: 'Matplotlib', icon: <VscGraphLine /> },  // fallback icon
-      { text: 'Whisper', icon: <BiMicrophone /> },     // fallback icon
-      { text: 'Librosa', icon: <MdOutlineLibraryMusic /> }, // fallback icon
+      { text: 'PyTorch', icon: <SiPytorch color="#EE4C2C" /> },
+      { text: 'Scikit-learn', icon: <SiScikitlearn color="#F7931E" /> },
+      { text: 'TensorFlow', icon: <SiTensorflow color="#FF6F00" /> },
+      { text: 'Keras', icon: <SiKeras color="#D00000" /> },
+      { text: 'NumPy', icon: <SiNumpy color="#013243" /> },
+      { text: 'Pandas', icon: <SiPandas color="#150458" /> },
+      { text: 'OpenCV', icon: <SiOpencv color="#5C3EE8" /> },
+      { text: 'Matplotlib', icon: <VscGraphLine color="#11557c" /> },  // fallback icon
+      { text: 'Whisper', icon: <BiMicrophone color="#A020F0" /> },     // fallback icon
+      { text: 'Librosa', icon: <MdOutlineLibraryMusic color="#2E8B57" /> }, // fallback icon
     ]
   },
   {
     link: '#',
     text: 'Web Development',
     subItems: [
-      { text: 'HTML/CSS', icon: <SiHtml5 /> },
-      { text: 'Tailwind CSS', icon: <SiTailwindcss /> },
-      { text: 'Streamlit', icon: <SiStreamlit /> },
-      { text: 'Node.js', icon: <SiNodedotjs /> },
-      { text: 'React', icon: <SiReact /> },
-      { text: 'Vite', icon: <SiVite /> },
+      { text: 'HTML/CSS', icon: <SiHtml5 color="#E34F26" /> },
+      { text: 'Tailwind CSS', icon: <SiTailwindcss color="#06B6D4" /> },
+      { text: 'Streamlit', icon: <SiStreamlit color="#FF4B4B" /> },
+      { text: 'Node.js', icon: <SiNodedotjs color="#339933" /> },
+      { text: 'React', icon: <SiReact color="#61DAFB" /> },
+      { text: 'Vite', icon: <SiVite color="#646CFF" /> },
     ]
   },
   {
     link: '#',
     text: 'Tools & Databases',
     subItems: [
-      { text: 'Git', icon: <SiGit /> },
-      { text: 'GitHub', icon: <SiGithub /> },
-      { text: 'MySQL', icon: <SiMysql /> },
-      { text: 'Docker', icon: <SiDocker /> },
+      { text: 'Git', icon: <SiGit color="#F05032" /> },
+      { text: 'GitHub', icon: <SiGithub color="#181717" /> },
+      { text: 'MySQL', icon: <SiMysql color="#4479A1" /> },
+      { text: 'Docker', icon: <SiDocker color="#2496ED" /> },
     ]
   }
 ];

@@ -12,28 +12,53 @@ function App() {
   const navRef = useRef(null);
 
   const handleScroll = useCallback(() => {
-    const scrollY = window.scrollY;
-    const heroHeight = window.innerHeight;
-    const progress = Math.min(scrollY / (heroHeight * 0.7), 1);
+    // Only schedule if there isn't one already pending
+    if (!heroRef.current?.ticking) {
+      window.requestAnimationFrame(() => {
+        const scrollY = window.scrollY;
+        const heroHeight = window.innerHeight;
+        
+        // --- 1. Hero Section Adjustments ---
+        // If we've scrolled completely past the hero section, lock the values
+        // to max and don't compute/update styles unnecessarily.
+        if (scrollY > heroHeight) {
+          if (heroRef.current && heroRef.current.dataset.hidden !== 'true') {
+            heroRef.current.style.transform = `scale(0.9)`;
+            heroRef.current.style.opacity = `0`;
+            heroRef.current.dataset.hidden = 'true'; // avoid HTML hidden attribute to prevent layout collapse
+          }
+        } else {
+          const progress = Math.min(scrollY / (heroHeight * 0.7), 1);
+          if (heroRef.current) {
+            heroRef.current.style.transform = `scale(${1 - progress * 0.1})`;
+            heroRef.current.style.opacity = `${1 - progress}`;
+            heroRef.current.dataset.hidden = 'false';
+          }
+        }
 
-    if (heroRef.current) {
-      heroRef.current.style.transform = `scale(${1 - progress * 0.1})`;
-      heroRef.current.style.filter = `blur(${progress * 12}px)`;
-      heroRef.current.style.opacity = `${1 - progress * 0.5}`;
-    }
+        // --- 2. Navbar Island Mode ---
+        if (navRef.current) {
+          if (scrollY > heroHeight * 0.3) {
+            navRef.current.classList.add('navbar--island');
+          } else {
+            navRef.current.classList.remove('navbar--island');
+          }
+        }
 
-    if (navRef.current) {
-      if (scrollY > heroHeight * 0.3) {
-        navRef.current.classList.add('navbar--island');
-      } else {
-        navRef.current.classList.remove('navbar--island');
-      }
+        // Reset the ticking flag
+        if (heroRef.current) heroRef.current.ticking = false;
+      });
+      
+      if (heroRef.current) heroRef.current.ticking = true;
     }
   }, []);
 
   useEffect(() => {
+    // Keep passive true for performance, we only read scroll data.
     window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, [handleScroll]);
 
   return (

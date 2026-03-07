@@ -37,7 +37,9 @@ function GallerySection() {
       {/* Absolute positioned title floating over the top left of the gallery */}
       <div className="gallery-title-container">
         <h2 className="gallery-title">
-          <span className="gallery-title-text">I like to</span>
+          <span className="gallery-title-text">
+            I <span className="gallery-title-like">like</span> to
+          </span>
           <span className="gallery-title-accent">Click</span>
         </h2>
       </div>

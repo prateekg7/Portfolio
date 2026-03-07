@@ -9,9 +9,6 @@
   min-height: 800px;
   background: #0a0a0a;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .gallery-wrapper {
@@ -21,13 +18,15 @@
   z-index: 1;
 }
 
-/* ── Fixed Title overlaying the gallery ── */
+/* ── Title Container ── */
 .gallery-title-container {
   position: absolute;
-  top: 5rem;
-  left: 5rem;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 2rem 5rem 1rem 5rem; /* Reduced top padding to move title up */
   z-index: 10;
-  pointer-events: none; /* Allows the user to drag the gallery "through" the title */
+  pointer-events: none; /* Allows the user to drag the gallery "through" the title if nearby */
 }
 
 .gallery-title {
@@ -46,24 +45,26 @@
   position: relative;
 }
 
+.gallery-title-like {
+  color: #855bed;
+}
+
 .gallery-title-accent {
   font-family: 'TextTypeFont', monospace;
-  font-size: clamp(4rem, 8vw, 9rem);
+  font-size: clamp(3rem, 6vw, 6rem);
   font-weight: 900;
-  color: rgba(133, 91, 237, 0.45); /* Translucent purple to match 5.png */
+  color: #855bed;
   line-height: 1;
-  margin-left: -0.8rem; /* Creates the slight overlap effect */
+  margin-left: 1.5rem; /* Creates natural spacing */
   z-index: 1;
   position: relative;
   text-transform: capitalize;
-  text-shadow: 0 0 20px rgba(133, 91, 237, 0.2); /* Soft purple glow */
 }
 
 /* ── Responsive styling ── */
 @media (max-width: 1024px) {
   .gallery-title-container {
-    top: 6rem;
-    left: 2rem;
+    padding: 3rem 2rem 1rem 2rem;
   }
 }
 
